@@ -7,37 +7,51 @@
     box-sizing: border-box;
   }
   
+  html {
+    scroll-behavior: smooth;
+  }
+  
   body {
     font-family: Arial, sans-serif;
     background: #fff;
     color: #000;
+    /* 
+      La hauteur du header étant fixe (80px), 
+      on ajoute un padding-top pour éviter 
+      que le contenu passe en dessous 
+    */
+    padding-top: 80px;
   }
   
   /* =======================
-     HEADER
+     HEADER FIXED
      ======================= */
   header {
-    display: flex;
+    
+    top: 0;
+    left: 0;
     width: 100%;
-    min-height: 600px;
+    min-height: 80px;
+    display: flex;
+    z-index: 9999; /* Pour être au-dessus du contenu */
+    background: #222; /* Couleur de fond du header */
   }
   
-  /* Zone gauche du header */
   .header-left,
   .header-right {
     flex: 1;
     position: relative;
   }
   
+  /* Partie gauche du header */
   .header-left img {
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    height: 50%;
     object-fit: cover;
   }
   
-  /* Zone droite du header : fond noir + texte */
+  /* Partie droite du header : fond sombre + texte */
   .header-right {
-    background: #222;
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -45,7 +59,7 @@
     padding: 20px;
   }
   
-  /* Navigation du header */
+  /* Barre de navigation du header */
   .header-top {
     display: flex;
     align-items: center;
@@ -53,9 +67,10 @@
   }
   
   .brand {
-    font-size: 2rem;
-    font-family: 'Prata', serif;
+    font-size: 1.5rem;
+    font-family: 'Prata', serif; /* si vous importez la police */
     text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
   
   .header-top nav ul {
@@ -68,8 +83,9 @@
     color: #fff;
     text-decoration: none;
     font-style: italic;
-    font-size: 1rem;
+    font-size: 0.9rem;
     text-transform: uppercase;
+    letter-spacing: 0.04em;
   }
   
   /* Texte principal dans le header */
@@ -77,29 +93,27 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-top: 50px; /* Ajustez selon vos besoins */
+    margin-top: 30px;
   }
   
   .header-text h1 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     font-family: 'Prata', serif;
     line-height: 1.2;
   }
   
   .header-text h2 {
-    font-size: 1.5rem;
-    font-family: Arial, sans-serif;
-    line-height: 1.2;
-    margin-bottom: 20px;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
   }
   
   .checks {
     list-style: none;
+    font-size: 0.95rem;
   }
   
   .checks li {
     margin: 5px 0;
-    font-size: 1rem;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -115,11 +129,40 @@
     background: #fff;
     color: #222;
     border: none;
-    padding: 15px 30px;
+    padding: 12px 25px;
     cursor: pointer;
     font-weight: bold;
     text-transform: uppercase;
-    margin-top: 20px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+  }
+  
+  /* =======================
+     ANIMATIONS & HOVER
+     ======================= */
+  .hover-scale {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  .hover-scale:hover {
+    transform: scale(1.05);
+    background-color: #ddd;
+  }
+  
+  .fade-in {
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
+    /* Le "forwards" permet de conserver l’état final */
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
   /* =======================
@@ -128,7 +171,7 @@
   .separator {
     width: 100%;
     height: 10px;
-    background: #333; /* Noir légèrement différent */
+    background: #333;
   }
   
   /* =======================
@@ -138,12 +181,13 @@
     display: flex;
     width: 100%;
     background: #282829;
-    padding: 20px;
+    padding: 40px 20px;
   }
   
   .frame-left,
   .frame-right {
     flex: 1;
+    margin: 0 10px;
   }
   
   .frame-left img,
@@ -165,6 +209,7 @@
   .diamond-list {
     list-style: none;
     margin-bottom: 20px;
+    font-size: 1rem;
   }
   
   .diamond-list li {
@@ -189,10 +234,11 @@
     background: #fff;
     color: #222;
     border: none;
-    padding: 15px 30px;
+    padding: 12px 25px;
     cursor: pointer;
     font-weight: bold;
     text-transform: uppercase;
+    font-size: 0.9rem;
   }
   
   /* =======================
@@ -200,7 +246,7 @@
      ======================= */
   .form-section {
     background: #282829;
-    padding: 40px;
+    padding: 40px 20px;
   }
   
   .form-container {
@@ -215,15 +261,15 @@
     min-height: 350px;
   }
   
-  /* Partie gauche du formulaire */
   .form-left {
     flex: 1;
     padding: 40px;
   }
   
   .form-left h2 {
+    /* Importez la police Prata si besoin */
     font-family: 'Prata', serif;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: #38535D;
     margin-bottom: 20px;
   }
@@ -248,7 +294,6 @@
     font-size: 1rem;
   }
   
-  /* Case à cocher */
   .privacy {
     display: flex;
     align-items: center;
@@ -259,13 +304,13 @@
     background: #282829;
     color: #fff;
     border: none;
-    padding: 15px;
+    padding: 12px 25px;
     text-transform: uppercase;
     cursor: pointer;
     font-weight: bold;
+    font-size: 0.9rem;
   }
   
-  /* Partie droite du formulaire : image */
   .form-right {
     flex: 1;
     position: relative;
@@ -275,7 +320,7 @@
     position: absolute;
     width: 100%;
     height: auto;
-    top: -30px;  /* Ajustez pour faire dépasser la tête */
+    top: -30px;
     right: 0;
   }
   
@@ -324,7 +369,7 @@
     min-height: 200px;
   }
   
-  /* Positionnement absolu des blocs du footer */
+  /* Positionnement absolu des blocs dans le footer */
   .footer-col {
     position: absolute;
   }
@@ -339,7 +384,7 @@
   .right-top {
     top: 20px;
     right: 20px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
     font-family: 'Prata', serif;
   }
@@ -356,12 +401,9 @@
     gap: 10px;
   }
   
-  .icon {
+  .social-icons img {
     width: 32px;
     height: 32px;
-    display: inline-block;
-    background: #fff; /* Couleur provisoire pour icônes */
-    border-radius: 4px;
   }
   
   /* Coin inférieur gauche */
@@ -388,10 +430,11 @@
     background: #fff;
     color: #222;
     border: none;
-    padding: 15px 30px;
+    padding: 12px 25px;
     cursor: pointer;
     font-weight: bold;
     text-transform: uppercase;
+    font-size: 0.9rem;
   }
   
   /* Liens Terms of Use, Privacy Policy */
@@ -399,7 +442,76 @@
   .privacy {
     color: #D5C9BE;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-style: italic;
+  }
+  
+  /* =======================
+     MEDIA QUERIES
+     ======================= */
+  
+  /* Pour tablettes (max 768px) */
+  @media (max-width: 768px) {
+    body {
+      padding-top: 100px; /* Ajuste l'espace pour le header fixe */
+    }
+  
+    .header-top {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .three-frames {
+      flex-direction: column;
+    }
+  
+    .frame-left, .frame-center, .frame-right {
+      margin: 10px 0;
+    }
+  
+    .form-container {
+      flex-direction: column;
+      border-radius: 20px;
+    }
+  
+    .form-right img {
+      position: static;
+      width: 100%;
+      margin-top: 20px;
+    }
+  
+    .footer-col {
+      position: static;
+      margin: 10px 0;
+    }
+  
+    .footer-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  /* Pour mobiles (max 480px) */
+  @media (max-width: 480px) {
+    .header-text h1 {
+      font-size: 1.4rem;
+    }
+    .header-text h2 {
+      font-size: 1rem;
+    }
+  
+    .diamond-list li {
+      padding-left: 25px;
+    }
+  
+    .form-left, .form-right {
+      padding: 20px;
+    }
+  
+    .footer-container {
+      align-items: flex-start;
+    }
   }
   
