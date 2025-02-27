@@ -1,0 +1,405 @@
+/* =======================
+   RESET / BASE
+   ======================= */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #000;
+  }
+  
+  /* =======================
+     HEADER
+     ======================= */
+  header {
+    display: flex;
+    width: 100%;
+    min-height: 600px;
+  }
+  
+  /* Zone gauche du header */
+  .header-left,
+  .header-right {
+    flex: 1;
+    position: relative;
+  }
+  
+  .header-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Zone droite du header : fond noir + texte */
+  .header-right {
+    background: #222;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  /* Navigation du header */
+  .header-top {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .brand {
+    font-size: 2rem;
+    font-family: 'Prata', serif;
+    text-transform: uppercase;
+  }
+  
+  .header-top nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+  
+  .header-top nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-style: italic;
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+  
+  /* Texte principal dans le header */
+  .header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 50px; /* Ajustez selon vos besoins */
+  }
+  
+  .header-text h1 {
+    font-size: 2.5rem;
+    font-family: 'Prata', serif;
+    line-height: 1.2;
+  }
+  
+  .header-text h2 {
+    font-size: 1.5rem;
+    font-family: Arial, sans-serif;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  
+  .checks {
+    list-style: none;
+  }
+  
+  .checks li {
+    margin: 5px 0;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .check-icon {
+    color: #EFCFAD;
+    font-weight: bold;
+  }
+  
+  /* Bouton ORDER (header) */
+  .order-btn {
+    background: #fff;
+    color: #222;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 20px;
+  }
+  
+  /* =======================
+     SÉPARATEUR 1
+     ======================= */
+  .separator {
+    width: 100%;
+    height: 10px;
+    background: #333; /* Noir légèrement différent */
+  }
+  
+  /* =======================
+     SECTION 3 VOLETS
+     ======================= */
+  .three-frames {
+    display: flex;
+    width: 100%;
+    background: #282829;
+    padding: 20px;
+  }
+  
+  .frame-left,
+  .frame-right {
+    flex: 1;
+  }
+  
+  .frame-left img,
+  .frame-right img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .frame-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    color: #fff;
+  }
+  
+  .diamond-list {
+    list-style: none;
+    margin-bottom: 20px;
+  }
+  
+  .diamond-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+  }
+  
+  /* Puce en forme de losange */
+  .diamond-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 10px;
+    height: 10px;
+    background: #EFCFAD;
+    transform: rotate(45deg);
+  }
+  
+  .order-btn-wide {
+    background: #fff;
+    color: #222;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  /* =======================
+     SECTION FORMULAIRE
+     ======================= */
+  .form-section {
+    background: #282829;
+    padding: 40px;
+  }
+  
+  .form-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    border: 2px solid #D5C9BE;
+    border-radius: 30px;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    min-height: 350px;
+  }
+  
+  /* Partie gauche du formulaire */
+  .form-left {
+    flex: 1;
+    padding: 40px;
+  }
+  
+  .form-left h2 {
+    font-family: 'Prata', serif;
+    font-size: 2rem;
+    color: #38535D;
+    margin-bottom: 20px;
+  }
+  
+  .form-left form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-left label {
+    font-size: 1rem;
+    color: #55565A;
+    margin-bottom: 5px;
+  }
+  
+  .form-left input[type="text"],
+  .form-left input[type="email"] {
+    padding: 10px;
+    border: 2px solid #D6D6D6;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  /* Case à cocher */
+  .privacy {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .submit-btn {
+    background: #282829;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  /* Partie droite du formulaire : image */
+  .form-right {
+    flex: 1;
+    position: relative;
+  }
+  
+  .form-right img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: -30px;  /* Ajustez pour faire dépasser la tête */
+    right: 0;
+  }
+  
+  /* =======================
+     SÉPARATEUR 2 AVEC TEXTE
+     ======================= */
+  .separator-lines {
+    background: #222;
+    position: relative;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .separator-lines::before,
+  .separator-lines::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+  }
+  
+  .separator-lines .sep-text {
+    display: inline-block;
+    color: #fff;
+    font-size: 1.2rem;
+    font-style: italic;
+    text-transform: uppercase;
+    margin: 10px 0;
+  }
+  
+  /* =======================
+     FOOTER
+     ======================= */
+  footer {
+    background: #222;
+    color: #fff;
+    position: relative;
+    padding: 40px 20px;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    min-height: 200px;
+  }
+  
+  /* Positionnement absolu des blocs du footer */
+  .footer-col {
+    position: absolute;
+  }
+  
+  /* Coin supérieur gauche */
+  .left-top {
+    top: 20px;
+    left: 20px;
+  }
+  
+  /* Coin supérieur droit */
+  .right-top {
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-family: 'Prata', serif;
+  }
+  
+  /* Centre supérieur : icônes réseaux */
+  .center-top {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .icon {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    background: #fff; /* Couleur provisoire pour icônes */
+    border-radius: 4px;
+  }
+  
+  /* Coin inférieur gauche */
+  .left-bottom {
+    bottom: 20px;
+    left: 20px;
+  }
+  
+  /* Coin inférieur droit */
+  .right-bottom {
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  /* Centre inférieur */
+  .center-bottom {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Bouton ORDER dans le footer */
+  .order-btn-footer {
+    background: #fff;
+    color: #222;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  /* Liens Terms of Use, Privacy Policy */
+  .terms,
+  .privacy {
+    color: #D5C9BE;
+    text-decoration: none;
+    font-size: 1rem;
+    font-style: italic;
+  }
+  

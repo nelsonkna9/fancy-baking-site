@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Site Vitrine</title>
+  <!-- Lien vers la feuille de style -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- HEADER / BANNIÈRE -->
+  <header>
+    <!-- Partie gauche : image pleine hauteur -->
+    <div class="header-left">
+      <!-- Placez ici l'image correspondant à la partie gauche du header -->
+      <img src="images/header-left.jpg" alt="Bâtiment gauche" />
+    </div>
+
+    <!-- Partie droite : fond noir + texte -->
+    <div class="header-right">
+      <!-- Navigation / Logo -->
+      <div class="header-top">
+        <span class="brand">LOREM</span>
+        <nav>
+          <ul>
+            <li><a href="#">CONSECTETUR</a></li>
+            <li><a href="#">SIT AMET</a></li>
+            <li><a href="#">EIUSMOD TEMPOR</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Texte principal -->
+      <div class="header-text">
+        <h1>Lorem ipsum <br/> dolor sit amet</h1>
+        <h2>sed do eiumod tempor</h2>
+        
+        <!-- Liste de puces -->
+        <ul class="checks">
+          <li><span class="check-icon">✔</span> do $10 000 consectetur elit</li>
+          <li><span class="check-icon">✔</span> 30% sed do eiusmod tempor</li>
+          <li><span class="check-icon">✔</span> do 17% adipiscing elit sed do</li>
+        </ul>
+
+        <!-- Bouton ORDER -->
+        <button class="order-btn">ORDER</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SÉPARATEUR 1 -->
+  <div class="separator"></div>
+
+  <!-- SECTION À TROIS VOLETS (Images latérales + contenu central) -->
+  <section class="three-frames">
+    <!-- Image de gauche -->
+    <div class="frame-left">
+      <img src="images/section-left.jpg" alt="Bâtiment section gauche" />
+    </div>
+
+    <!-- Contenu central : liste en puces + bouton -->
+    <div class="frame-center">
+      <ul class="diamond-list">
+        <li>Lorem ipsum dolor sit amet, adipiscing elit</li>
+        <li>sed do eiusmod tempor</li>
+        <li>ut enim ad minim veniam</li>
+        <li>quis nostrud exercitation ullamco</li>
+      </ul>
+      <button class="order-btn-wide">ORDER</button>
+    </div>
+
+    <!-- Image de droite -->
+    <div class="frame-right">
+      <img src="images/section-right.jpg" alt="Bâtiment section droite" />
+    </div>
+  </section>
+
+  <!-- SECTION FORMULAIRE -->
+  <section class="form-section">
+    <div class="form-container">
+      <!-- Colonne gauche : formulaire -->
+      <div class="form-left">
+        <h2>Consectetur sed do eiusmod</h2>
+        <form>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" />
+          
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="Your Email" />
+
+          <div class="privacy">
+            <input type="checkbox" id="privacy" name="privacy" />
+            <label for="privacy">I accept Privacy Policy</label>
+          </div>
+
+          <button type="submit" class="submit-btn">SUBMIT FORM</button>
+        </form>
+      </div>
+
+      <!-- Colonne droite : image de la femme -->
+      <div class="form-right">
+        <img src="images/woman.png" alt="Femme" />
+      </div>
+    </div>
+  </section>
+
+  <!-- SÉPARATEUR 2 AVEC TEXTE CENTRAL -->
+  <div class="separator-lines">
+    <span class="sep-text">CONSECTETUR  ADIPISCING  TEMPOR</span>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <!-- Coin supérieur gauche -->
+      <div class="footer-col left-top">
+        <button class="order-btn-footer">ORDER</button>
+      </div>
+
+      <!-- Coin supérieur droit -->
+      <div class="footer-col right-top">
+        <span>LOREM</span>
+      </div>
+
+      <!-- Centre supérieur : icônes réseaux sociaux -->
+      <div class="footer-col center-top">
+        <div class="social-icons">
+          <a href="#" class="icon instagram"></a>
+          <a href="#" class="icon tiktok"></a>
+          <a href="#" class="icon linkedin"></a>
+          <a href="#" class="icon facebook"></a>
+          <a href="#" class="icon telegram"></a>
+          <a href="#" class="icon youtube"></a>
+        </div>
+      </div>
+
+      <!-- Coin inférieur gauche -->
+      <div class="footer-col left-bottom">
+        <a href="#" class="terms">Terms of Use</a>
+      </div>
+
+      <!-- Coin inférieur droit -->
+      <div class="footer-col right-bottom">
+        <span>© 2024, Copyright.</span>
+      </div>
+
+      <!-- Centre inférieur : Privacy Policy -->
+      <div class="footer-col center-bottom">
+        <a href="#" class="privacy">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script JS -->
+  <script src="script.js"></script>
+</body>
+</html>
